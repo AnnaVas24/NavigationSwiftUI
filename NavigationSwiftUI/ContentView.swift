@@ -9,8 +9,23 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        NavigationView {
+            VStack {
+                Text("Hello, world!")
+                    .padding()
+                NavigationLink(
+                    "To the second view",
+                    destination: SecondView(someMessage: "Hi from First Screen")
+                )
+                    .padding()
+                
+                NavigationLink(
+                    "To the third view",
+                    destination: ThirdView()
+                )
+            }
+            .navigationTitle("First Screen")
+        }
     }
 }
 
